@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
+    <title>Aura Prime | Premium Hair Transplant Clinic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #ffffff;
+            color: #1a2c3e;
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+        .container {
+            width: 100%;
+            padding: 0 20px;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        section {
+            padding: 50px 0;
+            width: 100%;
+        }
+        h1, h2, h3 {
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        @media (min-width: 768px) {
+            section {
+                padding: 70px 0;
+            }
+            h2 {
+                font-size: 2.2rem;
+            }
+        }
+        .gold {
+            color: #d4af37;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #d4af37, #b8860b);
+            border: none;
+            padding: 14px 24px;
+            font-weight: 600;
+            font-size: 1rem;
+            border-radius: 50px;
+            color: white;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            min-height: 52px;
+            width: 100%;
+            box-shadow: 0 8px 18px rgba(180, 130, 30, 0.3);
+        }
+        @media (min-width: 768px) {
+            .btn-primary {
+                width: auto;
+            }
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(212, 175, 55, 0.4);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #d4af37;
+            padding: 12px 24px;
+            border-radius: 50px;
+            color: #d4af37;
+            font-weight: 600;
+            min-height: 48px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            width: 100%;
+        }
+        @media (min-width: 768px) {
+            .btn-outline {
+                width: auto;
+            }
+        }
+        .btn-outline:hover {
+            background: #d4af37;
+            color: white;
+        }
+        input, select {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid #e2e8f0;
+            border-radius: 60px;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            background: #fff;
+            transition: all 0.2s;
+            min-height: 52px;
+        }
+        input:focus, select:focus {
+            outline: none;
+            border-color: #d4af37;
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+        }
+        /* Image Skeleton Loader */
+        .image-skeleton {
+            background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+            background-size: 200% 100%;
+            animation: shimmer 1.2s linear infinite;
+            border-radius: 20px;
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        img:not(.skeleton-loaded) {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        img.skeleton-loaded {
+            opacity: 1;
+        }
+        /* Sticky Header */
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            padding: 12px 0;
+        }
+        .header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+        @media (min-width: 768px) {
+            .logo h1 {
+                font-size: 1.8rem;
+            }
+        }
+        .logo span {
+            color: #d4af37;
+        }
+        .nav-menu {
+            position: fixed;
+            top: 70px;
+            left: -100%;
+            width: 80%;
+            max-width: 320px;
+            height: 100vh;
+            background: white;
+            flex-direction: column;
+            padding: 40px 28px;
+            gap: 25px;
+            transition: 0.3s ease;
+            box-shadow: 5px 0 30px rgba(0, 0, 0, 0.15);
+            z-index: 999;
+            display: flex;
+            list-style: none;
+        }
+        .nav-menu.active {
+            left: 0;
+        }
+        .nav-menu a {
+            text-decoration: none;
+            font-weight: 600;
+            color: #1a2c3e;
+            font-size: 1.1rem;
+            padding: 8px 0;
+            display: block;
+        }
+        .nav-menu a:hover {
+            color: #d4af37;
+        }
+        .hamburger {
+            display: block;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: #1a2c3e;
+            min-height: auto;
+            width: auto;
+        }
+        @media (min-width: 992px) {
+            .hamburger {
+                display: none;
+            }
+            .nav-menu {
+                position: static;
+                width: auto;
+                height: auto;
+                flex-direction: row;
+                background: transparent;
+                padding: 0;
+                box-shadow: none;
+                gap: 28px;
+                max-width: none;
+            }
+            .nav-menu a {
+                padding: 0;
+            }
+        }
+        /* Hero Section */
+        .hero-flex {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        @media (min-width: 768px) {
+            .hero-flex {
+                flex-direction: row;
+                align-items: center;
+                gap: 40px;
+            }
+            .hero-content, .hero-visual {
+                flex: 1;
+            }
+        }
+        .hero-badge {
+            background: rgba(212, 175, 55, 0.15);
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 40px;
+            font-weight: 600;
+            color: #d4af37;
+            margin-bottom: 15px;
+            font-size: 0.85rem;
+        }
+        .hero-content h1 {
+            font-size: 1.9rem;
+        }
+        @media (min-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.6rem;
+            }
+        }
+        .mini-form {
+            background: #f9f9ff;
+            padding: 20px;
+            border-radius: 28px;
+            margin-top: 20px;
+        }
+        .ba-images {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+        }
+        .ba-images img {
+            width: 48%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+        @media (min-width: 768px) {
+            .ba-images img {
+                height: 220px;
+            }
+        }
+        /* Trust Grid */
+        .trust-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            text-align: center;
+        }
+        .trust-card {
+            flex: 1;
+            min-width: 140px;
+            background: #f8fafc;
+            padding: 20px 12px;
+            border-radius: 24px;
+            transition: transform 0.3s;
+        }
+        .trust-card i {
+            font-size: 2rem;
+            color: #d4af37;
+            margin-bottom: 10px;
+        }
+        .trust-card h3 {
+            font-size: 1.3rem;
+        }
+        /* Cards Grid */
+        .treatment-grid, .why-grid, .pricing-grid, .blog-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        @media (min-width: 640px) {
+            .treatment-grid, .why-grid, .pricing-grid, .blog-grid {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            .card {
+                flex: 1;
+                min-width: 220px;
+            }
+        }
+        .card {
+            background: white;
+            border-radius: 24px;
+            padding: 24px 20px;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+        }
+        .card i {
+            font-size: 2.2rem;
+            color: #d4af37;
+            margin-bottom: 15px;
+        }
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        @media (min-width: 640px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (min-width: 1024px) {
+            .gallery-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        .gallery-item {
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+        .gallery-item p {
+            margin-top: 10px;
+            text-align: center;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        /* Testimonial Slider */
+        .testimonial-slider {
+            overflow: hidden;
+            position: relative;
+        }
+        .slides-container {
+            display: flex;
+            transition: transform 0.4s ease;
+        }
+        .testimonial-card {
+            min-width: 100%;
+            background: #fefaf0;
+            border-radius: 28px;
+            padding: 28px 20px;
+            text-align: center;
+        }
+        .testimonial-card i {
+            font-size: 2rem;
+            color: #d4af37;
+            margin-bottom: 15px;
+        }
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        .slider-controls button {
+            background: #1e2f3f;
+            color: white;
+            border: none;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        /* FAQ Accordion */
+        .faq-item {
+            background: white;
+            border-radius: 20px;
+            margin-bottom: 15px;
+            border: 1px solid #edf2f7;
+            overflow: hidden;
+        }
+        .faq-question {
+            padding: 18px 20px;
+            font-weight: 700;
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+            background: #fff;
+            font-size: 1rem;
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            padding: 0 20px;
+            color: #5a6e7c;
+            font-size: 0.95rem;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding-bottom: 20px;
+        }
+        /* Stats Counters */
+        .stats-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #d4af37;
+        }
+        @media (min-width: 768px) {
+            .stat-number {
+                font-size: 3.5rem;
+            }
+        }
+        /* Video Placeholder */
+        .video-placeholder {
+            position: relative;
+            border-radius: 28px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .video-placeholder img {
+            width: 100%;
+            display: block;
+        }
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #d4af37;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            transition: all 0.3s;
+        }
+        @media (min-width: 768px) {
+            .play-icon {
+                width: 80px;
+                height: 80px;
+                font-size: 2rem;
+            }
+        }
+        /* Offer Banner */
+        .offer-banner {
+            background: linear-gradient(135deg, #0f2c3b, #1e4a6b);
+            border-radius: 28px;
+            padding: 28px 20px;
+            text-align: center;
+            color: white;
+            margin: 20px 0;
+        }
+        /* Contact & Map */
+        .map-contact-flex {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        @media (min-width: 768px) {
+            .map-contact-flex {
+                flex-direction: row;
+                gap: 40px;
+            }
+            .map-container {
+                flex: 1.2;
+            }
+            .contact-details {
+                flex: 0.8;
+            }
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 280px;
+            border-radius: 24px;
+            border: 0;
+        }
+        .contact-details {
+            background: #f8fafc;
+            padding: 24px;
+            border-radius: 24px;
+        }
+        .form-group {
+            margin-bottom: 18px;
+        }
+        /* Floating Buttons */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25d366;
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 99;
+            transition: all 0.3s;
+        }
+        .call-float {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: #1e2f3f;
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 99;
+        }
+        footer {
+            background: #0a1c2a;
+            color: #cddfe7;
+            padding: 40px 0 25px;
+            text-align: center;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .mt-2 {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header class="sticky-header">
+    <div class="container header-flex">
+        <div class="logo"><h1>AURA<span>PRIME</span></h1></div>
+        <button class="hamburger" id="hamburgerBtn"><i class="fas fa-bars"></i></button>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#treatments">Treatments</a></li>
+            <li><a href="#gallery">Results</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#booking" class="btn-primary" style="padding: 10px 20px;">Book Now</a></li>
+        </ul>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section id="home" style="padding-top: 30px;">
+        <div class="container hero-flex">
+            <div class="hero-content">
+                <div class="hero-badge"><i class="fas fa-certificate"></i> World-Class Specialists</div>
+                <h1>Regain Your <span class="gold">Confidence</span><br>Premium Hair Transplant</h1>
+                <p style="margin: 15px 0; font-size: 1rem;">98% success rate • Painless FUE • Natural results • 10,000+ happy patients</p>
+                <div class="mini-form">
+                    <input type="text" id="heroName" placeholder="Your Full Name" style="margin-bottom: 12px;">
+                    <input type="tel" id="heroPhone" placeholder="Phone Number">
+                    <button class="btn-primary" id="heroCtaBtn" style="margin-top: 16px;"><i class="fas fa-calendar-check"></i> Get Free Consultation</button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="ba-images">
+                    <img id="heroBeforeImg" class="responsive-img" data-fallbacks='["https://images.pexels.com/photos/3845123/pexels-photo-3845123.jpeg?auto=compress&cs=tinysrgb&w=800","https://images.pexels.com/photos/3845124/pexels-photo-3845124.jpeg?auto=compress&cs=tinysrgb&w=800","https://placehold.co/800x600/e2e8f0/1a2c3e?text=Before+Hair+Loss"]' alt="Patient before hair transplant">
+                    <img id="heroAfterImg" class="responsive-img" data-fallbacks='["https://images.pexels.com/photos/3845125/pexels-photo-3845125.jpeg?auto=compress&cs=tinysrgb&w=800","https://images.pexels.com/photos/3845126/pexels-photo-3845126.jpeg?auto=compress&cs=tinysrgb&w=800","https://placehold.co/800x600/e2e8f0/1a2c3e?text=After+Hair+Transplant"]' alt="Patient after hair transplant">
+                </div>
+                <p class="text-center mt-2" style="font-weight: 600;"><span class="gold">⬅️ Before & After ➡️</span> Real patient results</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Indicators -->
+    <div class="container">
+        <div class="trust-grid">
+            <div class="trust-card"><i class="fas fa-chart-line"></i><h3>98%</h3><p>Success Rate</p></div>
+            <div class="trust-card"><i class="fas fa-user-md"></i><h3>15+ Years</h3><p>Expertise</p></div>
+            <div class="trust-card"><i class="fas fa-smile"></i><h3>10,000+</h3><p>Happy Patients</p></div>
+            <div class="trust-card"><i class="fas fa-trophy"></i><h3>ISO Certified</h3><p>Global Standards</p></div>
+        </div>
+    </div>
+
+    <!-- About Clinic -->
+    <section id="about">
+        <div class="container">
+            <h2>Elite <span class="gold">Hair Restoration</span></h2>
+            <div class="treatment-grid">
+                <div class="card"><i class="fas fa-microscope"></i><h3>Advanced Technology</h3><p>Sapphire FUE, DHI, Robotic precision – painless & scarless procedures.</p></div>
+                <div class="card"><i class="fas fa-hand-holding-heart"></i><h3>Personalized Care</h3><p>Custom hairline design, lifetime follow-up, and natural aesthetics.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Surgeon Profile -->
+    <section style="background: linear-gradient(135deg, #fefaf0 0%, #fff 100%);">
+        <div class="container">
+            <h2>Meet Dr. <span class="gold">Vikram Khanna</span></h2>
+            <div style="display: flex; flex-direction: column; gap: 30px; align-items: center;">
+                <img id="surgeonImg" class="responsive-img" data-fallbacks='["https://images.pexels.com/photos/5327656/pexels-photo-5327656.jpeg?auto=compress&cs=tinysrgb&w=800","https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg?auto=compress&cs=tinysrgb&w=800","https://placehold.co/800x800/e2e8f0/1a2c3e?text=Dr.+Vikram+Khanna"]' alt="Dr. Vikram Khanna - Hair Transplant Surgeon" style="border-radius: 28px; width: 100%; max-width: 320px;">
+                <div style="text-align: center;">
+                    <h3>MD, FISHRS | 15+ Years Experience</h3>
+                    <p style="margin: 15px 0;">Globally recognized hair transplant surgeon, pioneer in no-shave FUE techniques. "Artistic perfection meets medical excellence"</p>
+                    <p><i class="fas fa-award gold"></i> <strong>Golden Scalpel Award Winner 2024</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Treatments Section -->
+    <section id="treatments">
+        <div class="container">
+            <h2>Premium <span class="gold">Treatments</span></h2>
+            <div class="treatment-grid">
+                <div class="card"><i class="fas fa-dot-circle"></i><h3>FUE Transplant</h3><p>Minimally invasive, no linear scar, 98% graft survival</p></div>
+                <div class="card"><i class="fas fa-cut"></i><h3>FUT Method</h3><p>Maximum graft yield, ideal for advanced hair loss</p></div>
+                <div class="card"><i class="fas fa-syringe"></i><h3>PRP Therapy</h3><p>Stimulate dormant follicles, thicken existing hair</p></div>
+                <div class="card"><i class="fas fa-beard"></i><h3>Beard Transplant</h3><p>Full, natural-looking beard restoration</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section style="background: #f8fafc;">
+        <div class="container">
+            <h2>Why <span class="gold">Choose Aura Prime</span></h2>
+            <div class="why-grid">
+                <div class="card"><i class="fas fa-gem"></i><h3>Luxury Experience</h3><p>Private suites, 5-star patient care</p></div>
+                <div class="card"><i class="fas fa-chart-simple"></i><h3>98% Density Rate</h3><p>Highest graft survival in industry</p></div>
+                <div class="card"><i class="fas fa-shield-alt"></i><h3>Lifetime Warranty</h3><p>On all premium transplant packages</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before & After Gallery -->
+    <section id="gallery">
+        <div class="container">
+            <h2>Real Patient <span class="gold">Transformations</span></h2>
+            <div class="gallery-grid" id="galleryGrid"></div>
+        </div>
+    </section>
+
+    <!-- Procedure Steps -->
+    <section>
+        <div class="container">
+            <h2>Your <span class="gold">Step-by-Step</span> Journey</h2>
+            <div class="treatment-grid">
+                <div class="card"><i class="fas fa-head-side-medical"></i><h3>1. Consultation</h3><p>AI hair analysis & custom treatment plan</p></div>
+                <div class="card"><i class="fas fa-hand-holding-heart"></i><h3>2. Extraction</h3><p>Painless follicular unit harvest</p></div>
+                <div class="card"><i class="fas fa-draw-polygon"></i><h3>3. Implantation</h3><p>Artistic hairline design & placement</p></div>
+                <div class="card"><i class="fas fa-calendar-week"></i><h3>4. Recovery</h3><p>Return to work in just 3-5 days</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Timeline -->
+    <section style="background: #f8fafc;">
+        <div class="container">
+            <h2>Visible <span class="gold">Results Timeline</span></h2>
+            <div class="trust-grid">
+                <div><i class="fas fa-calendar-alt gold" style="font-size: 1.8rem;"></i><h3>1 Month</h3><p>New hair sprouts begin</p></div>
+                <div><i class="fas fa-seedling gold" style="font-size: 1.8rem;"></i><h3>3-4 Months</h3><p>Visible growth phase</p></div>
+                <div><i class="fas fa-leaf gold" style="font-size: 1.8rem;"></i><h3>8 Months</h3><p>Dense, natural coverage</p></div>
+                <div><i class="fas fa-crown gold" style="font-size: 1.8rem;"></i><h3>12 Months</h3><p>Full transformation complete</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Carousel -->
+    <section id="testimonials">
+        <div class="container">
+            <h2>Patient <span class="gold">Love Stories</span></h2>
+            <div class="testimonial-slider">
+                <div class="slides-container" id="testiSlider">
+                    <div class="testimonial-card"><i class="fas fa-quote-left"></i><p>"Life-changing decision! Natural hairline, painless procedure. Dr. Khanna is a magician."</p><h4>— Rajesh S.</h4><div style="color: #d4af37;">★★★★★</div></div>
+                    <div class="testimonial-card"><i class="fas fa-quote-left"></i><p>"World-class clinic with premium care. My confidence is back after years of hair loss."</p><h4>— Anita K.</h4><div style="color: #d4af37;">★★★★★</div></div>
+                    <div class="testimonial-card"><i class="fas fa-quote-left"></i><p>"Beard transplant gave me a completely new look. Best investment I ever made."</p><h4>— Jatin M.</h4><div style="color: #d4af37;">★★★★★</div></div>
+                </div>
+                <div class="slider-controls">
+                    <button id="prevSlide"><i class="fas fa-chevron-left"></i></button>
+                    <button id="nextSlide"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Counters -->
+    <section style="background: #0f2c3b; color: white;">
+        <div class="container">
+            <div class="stats-grid" id="statsSection">
+                <div><div class="stat-number" id="statSuccess" data-target="98">0</div><p>Success Rate (%)</p></div>
+                <div><div class="stat-number" id="statPatients" data-target="10256">0</div><p>Happy Patients</p></div>
+                <div><div class="stat-number" id="statYears" data-target="15">0</div><p>Years Experience</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Packages -->
+    <section>
+        <div class="container">
+            <h2>Exclusive <span class="gold">Packages</span></h2>
+            <div class="pricing-grid">
+                <div class="card"><h3>Essential FUE</h3><h2 class="gold">₹69,000</h2><p>Up to 2000 grafts • 1 Year Warranty</p><button class="btn-outline" style="margin-top: 15px;">Select Plan</button></div>
+                <div class="card" style="border: 2px solid #d4af37;"><h3>Sapphire <span class="gold">Premium</span></h3><h2 class="gold">₹1,25,000</h2><p>3000 grafts + PRP • 3 Years Warranty</p><button class="btn-primary" style="margin-top: 15px;">Most Popular</button></div>
+                <div class="card"><h3>Ultimate DHI</h3><h2 class="gold">₹1,99,000</h2><p>Unlimited grafts • Lifetime Warranty</p><button class="btn-outline" style="margin-top: 15px;">Book Now</button></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offers Banner -->
+    <div class="container">
+        <div class="offer-banner">
+            <h3><i class="fas fa-gift"></i> Limited Time Offer</h3>
+            <p style="margin: 12px 0;">20% OFF + FREE PRP Session & Laser Cap</p>
+            <p>Valid until March 31, 2025</p>
+            <button class="btn-primary" style="background: white; color: #b8860b; width: auto; padding: 10px 24px; margin-top: 12px;">Claim Discount →</button>
+        </div>
+    </div>
+
+    <!-- FAQ Accordion -->
+    <section>
+        <div class="container">
+            <h2>Frequently Asked <span class="gold">Questions</span></h2>
+            <div id="faqContainer">
+                <div class="faq-item"><div class="faq-question">Is FUE hair transplant painful? <i class="fas fa-plus"></i></div><div class="faq-answer">Local anesthesia ensures absolutely zero pain during the procedure. Most patients describe it as comfortable and even fall asleep during the session.</div></div>
+                <div class="faq-item"><div class="faq-question">When will I see final results? <i class="fas fa-plus"></i></div><div class="faq-answer">Initial growth at 4 months, significant density at 8 months, and final full results at 12-14 months post-procedure.</div></div>
+                <div class="faq-item"><div class="faq-question">How long is recovery time? <i class="fas fa-plus"></i></div><div class="faq-answer">Return to work in 3-5 days, scabs fall off by day 10, normal activities resume within 2 weeks.</div></div>
+                <div class="faq-item"><div class="faq-question">Are results permanent? <i class="fas fa-plus"></i></div><div class="faq-answer">Yes! Transplanted hair is genetically resistant to DHT and will last a lifetime with proper care.</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Booking Form -->
+    <section id="booking">
+        <div class="container">
+            <h2>Book Your <span class="gold">Consultation</span></h2>
+            <form id="appointmentForm" style="max-width: 600px; margin: 0 auto; background: white; border-radius: 28px; padding: 28px 20px; box-shadow: 0 20px 35px rgba(0, 0, 0, 0.05);">
+                <div class="form-group"><input type="text" id="fullName" placeholder="Full Name *" required></div>
+                <div class="form-group"><input type="tel" id="mobile" placeholder="Mobile Number *" required></div>
+                <div class="form-group"><select id="treatmentSelect"><option>FUE Hair Transplant</option><option>FUT Method</option><option>PRP Therapy</option><option>Beard Transplant</option></select></div>
+                <div class="form-group"><input type="date" id="prefDate" required></div>
+                <button type="submit" class="btn-primary"><i class="fas fa-calendar-plus"></i> Confirm Appointment</button>
+                <div id="formFeedback" style="margin-top: 16px; text-align: center;"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Video Testimonial Section -->
+    <section>
+        <div class="container">
+            <h2>Watch Patient <span class="gold">Journey</span></h2>
+            <div class="video-placeholder">
+                <img id="videoThumb" class="responsive-img" data-fallbacks='["https://images.pexels.com/photos/3845127/pexels-photo-3845127.jpeg?auto=compress&cs=tinysrgb&w=1200","https://images.pexels.com/photos/3845128/pexels-photo-3845128.jpeg?auto=compress&cs=tinysrgb&w=1200","https://placehold.co/1200x600/e2e8f0/1a2c3e?text=Watch+Patient+Journey"]' alt="Hair transplant patient journey video thumbnail">
+                <div class="play-icon"><i class="fas fa-play"></i></div>
+            </div>
+            <p class="text-center mt-2">Real patient: 12 months post-transplant transformation</p>
+        </div>
+    </section>
+
+    <!-- Contact + Google Map -->
+    <section id="contact">
+        <div class="container map-contact-flex">
+            <div class="map-container">
+                <iframe src="https://maps.google.com/maps?q=Connaught%20Place%20New%20Delhi&t=&z=14&output=embed" loading="lazy" allowfullscreen></iframe>
+            </div>
+            <div class="contact-details">
+                <h3><i class="fas fa-map-marker-alt gold"></i> Aura Prime Clinic</h3>
+                <p style="margin: 12px 0;">88, Diplomatic Enclave, Connaught Place<br>New Delhi - 110001, India</p>
+                <p><i class="fas fa-phone-alt gold"></i> <strong>+91 7897464377</strong></p>
+                <p><i class="fas fa-envelope gold"></i> hello@auraprime.com</p>
+                <p><i class="fas fa-clock gold"></i> Mon-Sat: 9am - 8pm | Sun: 10am - 4pm</p>
+                <div style="margin-top: 20px;">
+                    <i class="fab fa-instagram" style="font-size: 1.6rem; margin-right: 15px; cursor: pointer;"></i>
+                    <i class="fab fa-facebook" style="font-size: 1.6rem; margin-right: 15px; cursor: pointer;"></i>
+                    <i class="fab fa-youtube" style="font-size: 1.6rem; cursor: pointer;"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>© 2025 Aura Prime Hair Clinic | Excellence in Hair Restoration</p>
+        <p style="margin-top: 12px; font-size: 0.8rem;">ISO 9001:2024 Certified | NABH Accredited</p>
+    </div>
+</footer>
+
+<!-- Floating Buttons -->
+<a href="https://wa.me/917897464377?text=I%20need%20hair%20transplant%20consultation" class="whatsapp-float" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+<a href="tel:+917897464377" class="call-float"><i class="fas fa-phone-alt"></i></a>
+
+<script>
+    // ==================== ROBUST IMAGE FALLBACK SYSTEM ====================
+    function setImageWithFallback(imgElement, fallbackUrls, index = 0) {
+        if (!imgElement || index >= fallbackUrls.length) {
+            imgElement.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23d4af37"%3E%3Cpath d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15h-2v-2h2v2zm0-4h-2V7h2v6z"/%3E%3C/svg%3E';
+            imgElement.classList.add('skeleton-loaded');
+            return;
+        }
+        const url = fallbackUrls[index];
+        const tempImg = new Image();
+        tempImg.onload = () => {
+            imgElement.src = url;
+            imgElement.classList.add('skeleton-loaded');
+        };
+        tempImg.onerror = () => {
+            setImageWithFallback(imgElement, fallbackUrls, index + 1);
+        };
+        tempImg.src = url;
+    }
+
+    function initAllImagesWithFallbacks() {
+        const images = document.querySelectorAll('.responsive-img');
+        images.forEach(img => {
+            img.classList.add('image-skeleton');
+            let fallbacks = [];
+            const fallbackAttr = img.getAttribute('data-fallbacks');
+            if (fallbackAttr) {
+                try {
+                    fallbacks = JSON.parse(fallbackAttr);
+                } catch(e) { console.warn('Invalid JSON'); }
+            }
+            if (fallbacks.length === 0) {
+                fallbacks = [img.src || 'https://placehold.co/800x600/e2e8f0/1a2c3e?text=Image'];
+            }
+            setImageWithFallback(img, fallbacks, 0);
+        });
+    }
+
+    // Gallery images with relevant hair transplant results
+    const galleryImages = [
+        { alt: "Hair transplant before and after - frontal hairline restoration", fallbacks: ['https://images.pexels.com/photos/3845123/pexels-photo-3845123.jpeg?auto=compress&cs=tinysrgb&w=800', 'https://images.pexels.com/photos/3845124/pexels-photo-3845124.jpeg?auto=compress&cs=tinysrgb&w=800', 'https://placehold.co/800x600/e2e8f0/1a2c3e?text=Frontal+Hairline+Restoration'] },
+        { alt: "Crown area hair transplant results", fallbacks: ['https://images.pexels.com/photos/3845125/pexels-photo-3845125.jpeg?auto=compress&cs=tinysrgb&w=800', 'https://images.pexels.com/photos/3845126/pexels-photo-3845126.jpeg?auto=compress&cs=tinysrgb&w=800', 'https://placehold.co/800x600/e2e8f0/1a2c3e?text=Crown+Restoration'] },
+        { alt: "Beard transplant before and after", fallbacks: ['https://images.pexels.com/photos/3845127/pexels-photo-3845127.jpeg?auto=compress&cs=tinysrgb&w=800', 'https://images.pexels.com/photos/3845128/pexels-photo-3845128.jpeg?auto=compress&cs=tinysrgb&w=800', 'https://placehold.co/800x600/e2e8f0/1a2c3e?text=Beard+Transplant+Result'] },
+        { alt: "Natural hairline design after FUE", fallbacks: ['https://images.pexels.com/photos/3845129/pexels-photo-3845129.jpeg?auto=compress&cs=tinysrgb&w=800', 'https://images.pexels.com/photos/3845130/pexels-photo-3845130.jpeg?auto=compress&cs=tinysrgb&w=800', 'https://placehold.co/800x600/e2e8f0/1a2c3e?text=Natural+Hairline+Design'] }
+    ];
+
+    function buildGallery() {
+        const galleryContainer = document.getElementById('galleryGrid');
+        if (!galleryContainer) return;
+        galleryContainer.innerHTML = '';
+        galleryImages.forEach(imgData => {
+            const div = document.createElement('div');
+            div.className = 'gallery-item';
+            const img = document.createElement('img');
+            img.className = 'responsive-img';
+            img.alt = imgData.alt;
+            img.setAttribute('data-fallbacks', JSON.stringify(imgData.fallbacks));
+            img.loading = 'lazy';
+            const caption = document.createElement('p');
+            caption.textContent = imgData.alt;
+            div.appendChild(img);
+            div.appendChild(caption);
+            galleryContainer.appendChild(div);
+        });
+        initAllImagesWithFallbacks();
+    }
+
+    // ==================== INTERACTIONS ====================
+    const hamburger = document.getElementById('hamburgerBtn');
+    const navMenu = document.getElementById('navMenu');
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', () => navMenu.classList.toggle('active'));
+        document.querySelectorAll('.nav-menu a').forEach(link => link.addEventListener('click', () => navMenu.classList.remove('active')));
+    }
+
+    document.getElementById('heroCtaBtn')?.addEventListener('click', () => {
+        const name = document.getElementById('heroName').value.trim();
+        const phone = document.getElementById('heroPhone').value.trim();
+        if (!name || !phone) alert('Please enter name and phone number');
+        else alert(`Thanks ${name}! Our expert will call you on ${phone} within 30 minutes.`);
+    });
+
+    // Testimonial slider
+    const slides = document.querySelectorAll('.testimonial-card');
+    const containerSlide = document.getElementById('testiSlider');
+    let currentIdx = 0;
+    function updateSlider() { if(containerSlide) containerSlide.style.transform = `translateX(-${currentIdx * 100}%)`; }
+    document.getElementById('nextSlide')?.addEventListener('click', () => { currentIdx = (currentIdx + 1) % slides.length; updateSlider(); });
+    document.getElementById('prevSlide')?.addEventListener('click', () => { currentIdx = (currentIdx - 1 + slides.length) % slides.length; updateSlider(); });
+
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(q => {
+        q.addEventListener('click', () => {
+            const faqItem = q.parentElement;
+            faqItem.classList.toggle('active');
+            const icon = q.querySelector('i');
+            if(icon) icon.classList.toggle('fa-plus');
+            if(icon) icon.classList.toggle('fa-minus');
+        });
+    });
+
+    // Counters
+    const counters = [
+        { element: document.getElementById('statSuccess'), target: 98, current: 0 },
+        { element: document.getElementById('statPatients'), target: 10256, current: 0 },
+        { element: document.getElementById('statYears'), target: 15, current: 0 }
+    ];
+    let counted = false;
+    function startCounters() {
+        if(counted) return;
+        counted = true;
+        counters.forEach(counter => {
+            let update = () => {
+                let step = Math.ceil(counter.target / 40);
+                if(counter.current < counter.target) {
+                    counter.current += step;
+                    if(counter.current > counter.target) counter.current = counter.target;
+                    if(counter.element) counter.element.innerText = counter.current;
+                    requestAnimationFrame(update);
+                } else if(counter.element) counter.element.innerText = counter.target;
+            };
+            update();
+        });
+    }
+    const statsObserver = new IntersectionObserver((entries) => { if(entries[0].isIntersecting) startCounters(); }, { threshold: 0.3 });
+    const statsSection = document.getElementById('statsSection');
+    if(statsSection) statsObserver.observe(statsSection);
+
+    // Form validation
+    const bookingForm = document.getElementById('appointmentForm');
+    bookingForm?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('fullName').value.trim();
+        const mobile = document.getElementById('mobile').value.trim();
+        const date = document.getElementById('prefDate').value;
+        const msgDiv = document.getElementById('formFeedback');
+        if(!name || !mobile || !date) { msgDiv.innerHTML = '<span style="color:red;">⚠️ All fields required</span>'; return; }
+        if(!/^[0-9]{10,12}$/.test(mobile)) { msgDiv.innerHTML = '<span style="color:red;">📱 Enter valid 10-digit mobile number</span>'; return; }
+        msgDiv.innerHTML = '<span style="color:green;">✓ Appointment request sent! Our team will call you within 24 hours.</span>';
+        bookingForm.reset();
+        setTimeout(() => msgDiv.innerHTML = '', 5000);
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if(target) target.scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+
+    buildGallery();
+    initAllImagesWithFallbacks();
+</script>
+</body>
+</html>
